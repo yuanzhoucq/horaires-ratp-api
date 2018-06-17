@@ -4,7 +4,7 @@ $(function () {
 
   var getData = function () {
 
-    var schedules_url = 'https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/b/arcueil+cachan/A';
+    var schedules_url = 'https://api-ratp.pierre-grimaud.fr/v3/schedules/rers/b/fontenay-aux-roses/A';
     var traffic_url   = 'https://api-ratp.pierre-grimaud.fr/v3/traffic/rers/b';
 
     $.when($.getJSON(schedules_url), $.getJSON(traffic_url)).done(function (schedules, traffic) {
@@ -18,11 +18,11 @@ $(function () {
 
       var data = {
         traffic     : trafficResponse.message,
-        line        : 'B',
+        line        : 'b',
         type        : 'rer',
         horaires    : scheduleResponse.schedules,
         destination : 'Charles De Gaulle - Mitry Claye',
-        station     : 'Arcueil Cachan',
+        station     : 'Fontenay-aux-Roses',
         current_time: current_time
       };
 
